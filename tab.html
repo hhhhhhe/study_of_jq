@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 500px;
+            height: 600px;
+            border:1px solid #000000;
+            margin: 50px auto;
+            background-color: #216353;
+        }
+        img{
+            margin-top: 100px;
+            width: 500px;
+            height: 320px;
+        }
+        .nav>li{
+            list-style: none;
+            width: 125px;
+            height: 50px;
+            background:#004445;
+            text-align: center;
+            line-height: 50px;
+            float: left;
+            color: #dcd6f7;
+           font-size: 20px;
+           font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        .content>li{
+            list-style: none;
+            display: none;
+        }
+        .content>.show{
+            display: block;
+        }
+        .nav>.current{
+            background: #edffea;
+            color: #004445;
+        }
+        
+
+    </style>
+
+    <script src="lib/jquery-1.11.3/jquery-1.11.3/jquery.min.js">
+    </script>
+    <script>
+        $(function(){
+
+        $(".nav>li").mouseenter(function(){
+            $(this).addClass("current");
+           $(this).siblings().removeClass("current");
+            var index=$(this).index();
+            console.log(index);
+            var $li = $(".content>li").eq(index);
+            $li.siblings().removeClass("show");
+            $li.addClass("show");
+        });
+        });
+    </script>
+    
+</head>
+<body>
+    <div class="box">
+        <ul class="nav">
+            <li class="current">路飞</li>
+            <li>索隆</li>
+            <li>罗宾</li>
+            <li>乔巴</li>
+        </ul>
+        <ul class="content">
+            <li class="show"><img src="img/路飞.jpg" alt="路飞"></li>
+            <li><img src="img/索隆.jpg" alt="索隆"></li>
+            <li><img src="img/罗宾.jpg" alt="罗宾"></li>
+            <li><img src="img/乔巴.jpg" alt="乔巴"></li>
+
+        </ul>
+    </div>
+    
+</body>
+</html>
