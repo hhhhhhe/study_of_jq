@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹出广告</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .ad{
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            display: none;
+        }
+        .ad>span{
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: inline-block;
+        }
+
+    </style>
+    <script src="./lib/jquery-1.11.3/jquery-1.11.3/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("span").click(function(){
+                $(".ad").remove();
+            });
+            $(".ad").stop().slideDown(1000).fadeOut(1000).fadeIn(1000);
+        })
+    </script>
+</head>
+<body>
+    <div class="ad">
+        <img src="./img/弹出广告.png" alt="弹出广告">
+        <span></span>
+    </div>
+    
+</body>
+</html>
